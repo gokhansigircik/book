@@ -54,8 +54,6 @@ pageEncoding="UTF-8"%>
         </tbody>
       </table>
 
-
-
       <a href="/logout">Logout</a>
     </div>
 

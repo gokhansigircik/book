@@ -2,7 +2,9 @@ package com.gokhan.book.services;
 
 import java.util.List;
 import java.util.Optional;
-    
+
+import javax.validation.Valid;
+
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,6 +66,18 @@ public class BookService {
     }
     public List<Book> allbooks() {
         return null;
+    }
+    public void newBook(@Valid Book book) {
+    }
+    public List<Book> allBooks() {
+      return null;
+    }
+    public void updateBook(@Valid Book book) {
+    }
+    public Book findBook(Long id) {
+      return null;
+    }
+    public void deleteBook(Book book) {
     }
 }
 

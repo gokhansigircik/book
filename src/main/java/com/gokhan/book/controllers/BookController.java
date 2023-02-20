@@ -39,7 +39,7 @@ public class BookController {
     return "detail.jsp";
   }
 
-  @PostMapping("/book")
+  @PostMapping("/books")
     public String create(@Valid @ModelAttribute("book") Book book, BindingResult result, Model model) {
       if(result.hasErrors()){
         List<Book> books = bookService.allBooks();
@@ -54,7 +54,7 @@ public class BookController {
 
     @RequestMapping("/books/edit/{id}")
     public String showOne(@PathVariable("id")Long id, Model model){
-      Book book = bookService.findEBook(id);
+      Book book = bookService.findBook(id);
       model.addAttribute("book", book);
       return "edit.jsp";
     }
