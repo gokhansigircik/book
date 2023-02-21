@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Expenses</title>
+    <title>Books</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <!-- change to match your file/naming structure -->
@@ -22,17 +22,26 @@ pageEncoding="UTF-8"%>
     <!-- change to match your file/naming structure -->
   </head>
   <body>
-    <h1>Book Detail</h1>
-    <a href="/">Back Home</a>
-       <p>
-            Book: ${book.title}
+    <h1>Edit Book</h1><br />
+    <a href="/books/">Back to Shelves</a><br />
+    <form:form  action="/edit/${book.id}" method="post" modelAttribute="book">
+      <input type="hidden" name="_method" value="put">
+        <p>
+            <form:label path="title">Book Title</form:label>
+            <form:errors path="title"/>
+            <form:input path="title"/>
         </p>
         <p>
-          Author: ${book.author}
+            <form:label path="author">Author</form:label>
+            <form:errors path="author"/>
+            <form:textarea path="author"/>
         </p>
         <p>
-          My thoughts: ${book.mythoughts}
-        </p>
-        <p ><c:out value="${book.description}"></c:out></p>
+            <form:label path="thoughts">Thoughts</form:label>
+            <form:errors path="thoughts"/>
+            <form:input type="textarea" path="thoughts"/>
+        </p>  
+        <input type="submit" value="Save Edits"/>
+    </form:form> 
   </body>
 </html>

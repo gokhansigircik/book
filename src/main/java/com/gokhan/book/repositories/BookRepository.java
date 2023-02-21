@@ -1,10 +1,12 @@
 package com.gokhan.book.repositories;
 import java.util.List;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.gokhan.book.models.Book;
 @Repository
-public interface BookRepository {
-	List<Book>findAll();
+public interface BookRepository extends CrudRepository<Book, Long> {
+    List<Book> findAll();
+    
 }

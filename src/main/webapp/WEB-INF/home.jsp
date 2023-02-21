@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>Tacos</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <!-- change to match your file/naming structure -->
@@ -21,44 +21,27 @@ pageEncoding="UTF-8"%>
     <!-- change to match your file/naming structure -->
   </head>
   <body>
-    <div class="container mt-3">
-      <h1>Welcome <c:out value="${user.userName}"/></h1>
-      <p>Books from everyone's shelves:</p>
-
-      <table class="table">
-        <thead>
+    <h1>Welcome <c:out value="${user.userName}"></c:out>!</h1><br>
+    <p>This is your dashboard, nothing to see here.</p><br>
+    <a href="/logout">Logout</a>
+    <a href="/books/new">Create Book</a>
+    <table>
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Author</td>
+          <td>Posted By</td>
+        </tr>
+      </thead>
+      <tbody>
+        <c:forEach var="book" items="${books}">
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">Author Name</th>
-            <th scope="col">Posted By</th>
-            <th scope="col">Action</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <c:forEach var="book" items="${books}">
-          <tr>
-            <td><a href="/books/${book.id}"><c:out value="${book.title}"></c:out></a></td>
-            <td><c:out value="${book.author}"></c:out></td>
-            <td><c:out value="${book.mythoughts}"></c:out></td>
-            <td><a href="/books/edit/${book.id}">Edit</a></td>
-            <td>
-              <form action="/books/delete/${book.id}" method="post">
-                <input type="hidden" name="_method" value="delete">
-                <input type="submit" value="Delete">
-              </form>
-            </td>
-          </tr>
+          <td><a href="/books/${book.id}">${book.title}</a></td>
+          <td>${book.author}</td>
+          <td>${book.user.userName}</td>
+        </tr>
         </c:forEach>
-        </tbody>
-      </table>
-
-      <a href="/logout">Logout</a>
-    </div>
-
-
-    
-    
+      </tbody>
+    </table>
   </body>
 </html>

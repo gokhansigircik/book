@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Book </title>
+    <title>Tacos</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <!-- change to match your file/naming structure -->
@@ -21,51 +21,47 @@ pageEncoding="UTF-8"%>
     <!-- change to match your file/naming structure -->
   </head>
   <body>
-    <div class="container">
-      
-          <h1 style="color: blue;" >Book Club</h1>
-          <p>A place for friends to share thoughts on books</p>
-          <form:form action="/register" method="post" modelAttribute="newUser">
-            <p>
-              <form:label path="userName">User Name:</form:label>
-              <form:errors path="userName" />
-              <form:input path="userName" class="form-control"/>
-            </p>
-            <p>
-              <form:label path="email">Email:</form:label>
-              <form:errors path="email" />
-              <form:input path="email" class="form-control"/>
-            </p>
-            <p>
-              <form:label path="password">Password:</form:label>
-              <form:errors path="password" />
-              <form:input type="password" path="password" class="form-control"/>
-            </p>
-            <p>
-              <form:label path="confirm">Confirm PW:</form:label>
-              <form:errors path="confirm" />
-              <form:input type="password" path="confirm" class="form-control"/>
-            </p>
-            <input type="submit" value="submit" class="btn btn-warning"/>
-          </form:form>
-          <br>
-          <br>
-          <form:form action="/login" method="post" modelAttribute="newLogin">
-          <p>
-            <form:label path="email">Email:</form:label>
-            <form:errors path="email" />
-            <form:input path="email" class="form-control"/>
-          </p>
-          <p>
-            <form:label path="password">Password:</form:label>
-            <form:errors path="password" />
-            <form:input type="password" path="password" class="form-control"/>
-            
-          </p>
-          <input type="submit" value="submit" class="btn btn-warning" />
-            </form:form>
-        
-    </div>
-
+    <h1>Welcome!</h1>
+    <br />
+    <h3>Join our growing community.</h3>
+    <br />
+    <h2>Register</h2>
+    <br />
+    <form:form modelAttribute="newUser" action="/register" method="post">
+      <p>
+        <form:label path="userName">User Name:</form:label>
+        <form:errors path="userName" />
+        <form:input path="userName" />
+      </p>
+      <p>
+        <form:label path="email">Email:</form:label>
+        <form:errors path="email" />
+        <form:input path="email" />
+      </p>
+      <p>
+        <form:label path="password">Password:</form:label>
+        <form:errors path="password" />
+        <form:input type="password" path="password" />
+      </p>
+      <p>
+        <form:label path="confirm">Confirm Password:</form:label>
+        <form:errors path="confirm" />
+        <form:input type="password" path="confirm" />
+      </p>
+      <input type="submit" value="Create User"/>
+    </form:form><br>
+    <form:form modelAttribute="newLogin" action="/login" method="post">
+      <p>
+        <form:label path="email">Email:</form:label>
+        <form:errors path="email" />
+        <form:input path="email" />
+      </p>
+      <p>
+        <form:label path="password">Password:</form:label>
+        <form:errors path="password" />
+        <form:input type="password" path="password" />
+      </p>
+      <input type="submit" value="Login"/>
+    </form:form>    
   </body>
 </html>
