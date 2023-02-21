@@ -21,47 +21,52 @@ pageEncoding="UTF-8"%>
     <!-- change to match your file/naming structure -->
   </head>
   <body>
-    <h1>Welcome!</h1>
-    <br />
-    <h3>Join our growing community.</h3>
-    <br />
-    <h2>Register</h2>
-    <br />
-    <form:form modelAttribute="newUser" action="/register" method="post">
-      <p>
-        <form:label path="userName">User Name:</form:label>
-        <form:errors path="userName" />
-        <form:input path="userName" />
-      </p>
-      <p>
-        <form:label path="email">Email:</form:label>
-        <form:errors path="email" />
-        <form:input path="email" />
-      </p>
-      <p>
-        <form:label path="password">Password:</form:label>
-        <form:errors path="password" />
-        <form:input type="password" path="password" />
-      </p>
-      <p>
-        <form:label path="confirm">Confirm Password:</form:label>
-        <form:errors path="confirm" />
-        <form:input type="password" path="confirm" />
-      </p>
-      <input type="submit" value="Create User"/>
-    </form:form><br>
-    <form:form modelAttribute="newLogin" action="/login" method="post">
-      <p>
-        <form:label path="email">Email:</form:label>
-        <form:errors path="email" />
-        <form:input path="email" />
-      </p>
-      <p>
-        <form:label path="password">Password:</form:label>
-        <form:errors path="password" />
-        <form:input type="password" path="password" />
-      </p>
-      <input type="submit" value="Login"/>
-    </form:form>    
+    <div class="container">
+      <h1>Welcome!</h1>
+      <br />
+      <h3>Join our growing community.</h3>
+      <br />
+      <h2>Register</h2>
+      <br />
+      <form:form modelAttribute="newUser" action="/register" method="post">
+        <p>
+          <form:label path="userName">User Name:</form:label>
+          <form:errors path="userName" />
+          <form:input path="userName" />
+        </p>
+        <p>
+          <form:label path="email">Email:</form:label>
+          <form:errors path="email" />
+          <form:input path="email" />
+        </p>
+        <p>
+          <form:label path="password">Password:</form:label>
+          <form:errors path="password" />
+          <form:input type="password" path="password" />
+        </p>
+        <p>
+          <form:label path="confirm">Confirm Password:</form:label>
+          <form:errors path="confirm" />
+          <form:input type="password" path="confirm" />
+        </p>
+        <input type="submit" value="Create User"/>
+      </form:form><br>
+    </div>
+
+    <div class="container">
+      <form:form modelAttribute="newLogin" action="/login" method="post">
+        <p>
+          <form:label path="email">Email:</form:label>
+          <form:errors path="email" />
+          <form:input path="email" />
+        </p>
+        <p>
+          <form:label path="password">Password:</form:label>
+          <form:errors path="password" />
+          <form:input type="password" path="password" />
+        </p>
+        <input type="submit" value="Login"/>
+      </form:form>
+    </div>
   </body>
 </html>

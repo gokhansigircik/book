@@ -22,26 +22,29 @@ pageEncoding="UTF-8"%>
     <!-- change to match your file/naming structure -->
   </head>
   <body>
-    <h1>Edit Book</h1><br />
-    <a href="/books/">Back to Shelves</a><br />
-    <form:form  action="/edit/${book.id}" method="post" modelAttribute="book">
-      <input type="hidden" name="_method" value="put">
-        <p>
-            <form:label path="title">Book Title</form:label>
-            <form:errors path="title"/>
-            <form:input path="title"/>
-        </p>
-        <p>
-            <form:label path="author">Author</form:label>
-            <form:errors path="author"/>
-            <form:textarea path="author"/>
-        </p>
-        <p>
-            <form:label path="thoughts">Thoughts</form:label>
-            <form:errors path="thoughts"/>
-            <form:input type="textarea" path="thoughts"/>
-        </p>  
-        <input type="submit" value="Save Edits"/>
-    </form:form> 
+    <div class="container">
+      <h1>Edit Book</h1><br />
+      <a href="/books/">Back to Shelves</a><br />
+      <br>
+      <form:form  action="/edit/${book.id}" method="post" modelAttribute="book">
+        <input type="hidden" name="_method" value="put">
+          <p>
+              <form:label path="title">Book Title</form:label>
+              <form:errors path="title"/>
+              <form:input path="title"/>
+          </p>
+          <p>
+              <form:label path="author">Author</form:label>
+              <form:errors path="author"/>
+              <form:textarea path="author"/>
+          </p>
+          <p>
+              <form:label path="thoughts">Thoughts</form:label>
+              <form:errors path="thoughts"/>
+              <form:input type="textarea" path="thoughts"/>
+          </p>
+          <input class="btn btn-primary" type="submit" value="Save Edits"/>
+      </form:form>
+    </div>
   </body>
 </html>

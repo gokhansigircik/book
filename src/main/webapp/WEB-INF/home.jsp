@@ -21,27 +21,31 @@ pageEncoding="UTF-8"%>
     <!-- change to match your file/naming structure -->
   </head>
   <body>
-    <h1>Welcome <c:out value="${user.userName}"></c:out>!</h1><br>
-    <p>This is your dashboard, nothing to see here.</p><br>
-    <a href="/logout">Logout</a>
-    <a href="/books/new">Create Book</a>
-    <table>
-      <thead>
-        <tr>
-          <td>Title</td>
-          <td>Author</td>
-          <td>Posted By</td>
-        </tr>
-      </thead>
-      <tbody>
-        <c:forEach var="book" items="${books}">
-          <tr>
-          <td><a href="/books/${book.id}">${book.title}</a></td>
-          <td>${book.author}</td>
-          <td>${book.user.userName}</td>
-        </tr>
-        </c:forEach>
-      </tbody>
-    </table>
+    <div class="container">
+      <div class="card-body">
+        <h1>Welcome <c:out value="${user.userName}"></c:out>!</h1><br>
+        <p>This is your dashboard, nothing to see here.</p><br>
+        <a href="/logout">Logout</a>
+        <a href="/books/new">Create Book</a>
+        <table class="table">
+          <thead>
+            <tr>
+              <td>Title</td>
+              <td>Author</td>
+              <td>Posted By</td>
+            </tr>
+          </thead>
+          <tbody>
+            <c:forEach var="book" items="${books}">
+              <tr>
+              <td><a href="/books/${book.id}">${book.title}</a></td>
+              <td>${book.author}</td>
+              <td>${book.user.userName}</td>
+            </tr>
+            </c:forEach>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
